@@ -1,0 +1,408 @@
+
+    :root{
+      --bg: #F5F5F5;
+      --accent: #FF9015;
+      --accent-hover: #FFB461;
+      --client-strip: #FFDDB7;
+      --card-stroke: #C5C5C5;
+      --faq-border: #D3D3D3;
+      --text: #111;
+      --side-pad-desktop: 190px; /* desktop */
+      --site-width: 1440px; /* design width note */
+      --hambox-size: 40px;
+    }
+
+    /* Responsive padding scaling: keep visual proportion to 190px @1440 */
+    /* tablet padding ≈ 1440->1024 * 190 -> 135; mobile ≈ 52 */
+    @media (max-width: 1024px) {
+      :root { --side-pad-desktop: 135px; }
+    }
+    @media (max-width: 390px) {
+      :root { --side-pad-desktop: 52px; }
+    }
+
+    *{box-sizing: border-box}
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Sticky header - full width */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      background: var(--bg);
+      width: 100%;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .header-inner{
+      max-width: var(--site-width);
+      margin: 0 auto;
+      padding: 16px calc(var(--side-pad-desktop));
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+    }
+    .logo{
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .nav-links{
+      display:flex;
+      gap: 24px;
+      align-items:center;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:var(--text);
+      font-weight:500;
+      font-size:16px;
+    }
+
+    /* hamburger box at tablet breakpoint */
+    .hamburger {
+      display:none;
+      width:var(--hambox-size);
+      height:var(--hambox-size);
+      border:2px solid rgba(0,0,0,0.85); /* off-black stroke */
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      background:#fff;
+      border-radius:6px;
+    }
+    .hamburger .bar {
+      width:18px;
+      height:2px;
+      background:#111;
+      position:relative;
+    }
+    .hamburger .bar::after, .hamburger .bar::before{
+      content:'';
+      position:absolute;
+      left:0;
+      right:0;
+      height:2px;
+      background:#111;
+    }
+    .hamburger .bar::before{ top:-6px; }
+    .hamburger .bar::after{ top:6px; }
+
+    /* mobile menu panel */
+    .mobile-menu{
+      display:none;
+      position:fixed;
+      top:72px;
+      right:20px;
+      background:#fff;
+      border-radius:8px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.12);
+      padding:12px;
+      z-index:1300;
+    }
+    .mobile-menu a{ display:block; padding:8px 12px; text-decoration:none; color:var(--text); }
+
+    /* Hero */
+    .hero {
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-video-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops video like Google’s */
+}
+
+    /* container for centered content below the video */
+    .container {
+      max-width: var(--site-width);
+      margin: 0 auto;
+      padding: 48px calc(var(--side-pad-desktop));
+      text-align:center;
+    }
+
+    .hero-content h1{
+      font-size:39px;
+      line-height:1.05;
+      font-weight:700;
+      margin:0;
+    }
+    .hero-content p{
+      font-size:18px;
+      margin:32px 0 0;
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .cta{
+      display:inline-block;
+      margin-top:32px;
+      width:180px;
+      height:60px;
+      line-height:60px;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight:500;
+      font-size:18px;
+      border-radius:8px;
+    }
+    .cta:hover{ background:var(--accent-hover); }
+
+    .developed {
+      margin-top:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      font-size:12px;
+      color:rgba(0,0,0,0.7);
+    }
+    .developed img { width:66px; height:39px; object-fit:contain; }
+
+    /* client logo bar */
+  .client-bar {
+  max-width: var(--site-width);
+  margin: 48px auto;
+  position: relative;
+  overflow: hidden;
+  background-color: #F5F5F5;
+  height: 60px; /* match your PNG height */
+  padding: 0 calc(var(--side-pad-desktop));
+}
+
+.client-inner {
+  padding: 0 calc(var(--side-pad-desktop));
+  overflow: hidden; /* keeps gradients working */
+}
+
+.client-bar::before,
+.client-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+}
+
+.client-bar::before {
+  left: 0;
+  background: linear-gradient(to right, #F5F5F5, transparent);
+}
+
+.client-bar::after {
+  right: 0;
+  background: linear-gradient(to left, #F5F5F5, transparent);
+}
+
+/* track is now just holding the PNG */
+.client-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.client-track img {
+  height: 60px; /* or whatever your PNG export height is */
+  flex-shrink: 0;
+}
+
+
+/* seamless horizontal scrolling */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+
+
+
+    /* cards */
+   .cards {
+  max-width: var(--site-width);
+  margin: 48px auto;
+  padding: 0 calc(var(--side-pad-desktop));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  justify-items: stretch; /* full-width cards in their grid cell */
+}
+
+.card {
+  border: 1px solid var(--card-stroke);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #F5F5F5; /* gives contrast vs page bg */
+  display: flex;
+  flex-direction: column;
+}
+
+.card .img {
+  height: 200px;         /* consistent image area */
+  width: 100%;
+  object-fit: cover;
+  background: #ededed;   /* placeholder bg */
+  flex-shrink: 0;        /* don’t let it shrink */
+}
+
+.card .content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1; /* lets content grow naturally */
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 16px; /* slight downsize for better readability */
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 850px) {
+  .cards {
+    grid-template-columns: 1fr !important;
+    justify-items: center; /* center cards horizontally */
+  }
+}
+
+
+
+
+
+    /* FAQ */
+    .faq {
+      max-width: var(--site-width);
+      margin: 48px auto;
+      padding: 0 calc(var(--side-pad-desktop));
+    }
+    .faq .item{
+      padding:20px 0;
+      border-bottom: 1px solid var(--faq-border);
+    }
+    .faq .question{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      cursor:pointer;
+    }
+    .faq .question h4{
+      margin:0;
+      font-size:18px;
+      font-weight:700;
+    }
+    .faq .arrow{
+      transition: transform 0.3s ease;
+    }
+    .faq .answer {
+  height: 0;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+
+    .faq .item.open .arrow{ transform: rotate(180deg); }
+
+    /* contact form area placeholder */
+    .contact {
+      max-width: var(--site-width);
+      margin: 48px auto;
+      padding: 0 calc(var(--side-pad-desktop));
+    }
+    .contact .form-embed {
+      min-height:220px;
+      background: #fff;
+      border:1px dashed rgba(0,0,0,0.08);
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(0,0,0,0.5);
+      font-size:16px;
+      padding:24px;
+    }
+
+    /* footer */
+    footer {
+      background: var(--client-strip);
+      padding: 12px calc(var(--side-pad-desktop));
+      max-height:120px;
+    }
+    .footer-inner{
+      max-width: var(--site-width);
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      min-height:72px;
+    }
+
+    /* responsive breakpoints */
+    @media (max-width: 1200px){
+      .card { width: 100%; max-width:320px; }
+    }
+    @media (max-width: 1024px){
+      .nav-links{ display:none; }
+      .hamburger{ display:flex; }
+      .header-inner{ padding: 12px calc(var(--side-pad-desktop)); }
+      .cards { grid-template-columns: repeat(2, 1fr); padding: 0 calc(var(--side-pad-desktop)); }
+      .hero-content h1{ font-size:32px; }
+      .hero-content p{ font-size:16px; }
+    }
+    @media (max-width: 600px){
+      .cards { grid-template-columns: 1fr; padding: 0 24px; }
+      .container { padding: 32px 24px; text-align:center; }
+      .header-inner{ padding: 12px 24px; }
+      .client-strip .marquee{ padding-left: 24px; padding-right:24px; }
+      .hero .video-embed{ height:50vh; }
+      .developed img{ width:66px; height:39px; }
+    }
+
+    /* small mobile */
+    @media (max-width: 390px){
+      .header-inner{ padding: 10px 16px; }
+      .container { padding: 24px 16px; }
+      .hero-content h1{ font-size:26px; }
+      .hero-content p{ font-size:16px; }
+      .cta{ width:160px; height:52px; line-height:52px; font-size:16px; }
+    }
+
+section, .faq, .cards, .client-bar {
+  margin-bottom: 120px;
+}
+
+.hero,
+footer {
+  margin-bottom: 0;
+}

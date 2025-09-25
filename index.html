@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SafeSimXR — Landing</title>
+
+  <!-- Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo" aria-label="SafeSimXR logo">
+        <!-- Replace with actual logo image if desired -->
+        <img src="pictures/safesimxr logo.png" alt="SafeSimXR logo" style="height:28px; width:auto; object-fit:contain; display:block;" />
+      </div>
+
+      <nav>
+        <div class="nav-links" role="navigation" aria-label="Main navigation">
+          <a href="#details">Details</a>
+          <a href="#faq">FAQs</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+
+        <div class="mobile-menu" id="mobileMenu" role="menu" aria-hidden="true">
+          <a href="#details" role="menuitem">Details</a>
+          <a href="#faq" role="menuitem">FAQs</a>
+          <a href="#contact" role="menuitem">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO VIDEO -->
+  <section class="hero">
+  <div class="hero-video-container">
+    <video autoplay muted loop playsinline>
+      <source src="video/website-header.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+  <!-- HERO CONTENT -->
+  <section class="container hero-content" role="region" aria-label="Hero content">
+    <h1>Reliable Training for Real-World Challenges.</h1>
+    <p>From construction sites to healthcare, we deliver reliable simulations that keep your team prepared and protected.</p>
+
+    <a class="cta" style="color: rgb(48, 48, 48, 1);" href="#contact">Request a Demo</a>
+
+    <div class="developed" style="margin-top:32px;">
+      <div style="font-size:12px;">Developed by</div>
+      <!-- INSERT 'Developed by' logo below (66x39). Replace src and link as needed -->
+      <a href="#" aria-label="Spandrel Interactive (developer) link">
+        <img src="pictures\SpandrelInteractive_CMYK.png" alt="Developer logo placeholder"></a>
+    </div>
+  </section>
+
+  <!-- CLIENT LOGO STRIP -->
+  <div class="client-bar" aria-label="Trusted by">
+    <!-- The marquee duplicates its children to create a continuous scroll effect. -->
+    <div class="client-track" >
+    <img src="pictures/client bar logos.png" alt="client logos" />
+    <img src="pictures/client bar logos2.png" alt="client logos duplicate" />
+  </div>
+</div>
+
+  </section>
+
+  <!-- DETAILS (cards) -->
+  <section id="details" class="cards" aria-label="Product details">
+    <!-- CARD 1 -->
+    <article class="card">
+      <img class="img" src="pictures/Nursevr.png" alt="Safety Without Compromise image placeholder">
+      <div class="content">
+        <h3>Safety Without Compromise</h3>
+        <p>Our immersive XR simulations put trainees in high-risk scenarios—without the danger. Build confidence, reinforce safety standards, and reduce on-site incidents.</p>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="card">
+      <img class="img" src="pictures/docvr.png" alt="Reliable Training image placeholder">
+      <div class="content">
+        <h3>Reliable Training, Anytime</h3>
+        <p>With consistent, repeatable experiences, every employee gets the same quality of training. No missed details, no guesswork—just reliable preparation.</p>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="card">
+      <img class="img" src="#" alt="Efficiency at Scale image placeholder">
+      <div class="content">
+        <h3>Efficiency at Scale</h3>
+        <p>Cut training hours in half while improving engagement and retention. Train multiple employees, track progress instantly, and adapt scenarios to fit your needs.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq" aria-label="FAQ">
+    <div class="item" data-index="0">
+      <div class="question">
+        <h4>Do I need special hardware to use SafeSimXR?</h4>
+        <div class="arrow">▾</div>
+      </div>
+      <div class="answer">
+        <p>SafeSimXR works with most leading VR headsets. We’ll help you choose the best setup for your training needs, whether standalone or tethered devices.</p>
+      </div>
+    </div>
+
+    <div class="item" data-index="1">
+      <div class="question">
+        <h4>Can SafeSimXR be customized for my industry?</h4>
+        <div class="arrow">▾</div>
+      </div>
+      <div class="answer">
+        <p>Yes. Our platform is built with flexibility in mind. Whether you’re in construction, healthcare, or energy, we tailor scenarios to your specific workflows and safety standards.</p>
+      </div>
+    </div>
+
+    <div class="item" data-index="2">
+      <div class="question">
+        <h4>How long does it take to set up training?</h4>
+        <div class="arrow">▾</div>
+      </div>
+      <div class="answer">
+        <p>Most clients are up and running in just a few days. We provide full onboarding, technical support, and guidance so your team can start training quickly.</p>
+      </div>
+    </div>
+
+    <div class="item" data-index="3">
+      <div class="question">
+        <h4>Is the training content updated regularly?</h4>
+        <div class="arrow">▾</div>
+      </div>
+      <div class="answer">
+        <p>Absolutely. We continuously improve and expand training modules to reflect industry best practices, safety regulations, and client feedback.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact" aria-label="Contact">
+    <div class="form-embed">
+      <!-- INSERT YOUR EMBEDDED CONTACT FORM HERE (Formspree, Netlify forms, Hubspot, etc.) -->
+      <!-- Example: paste your form embed code or iframe here -->
+      Contact form embed placeholder — paste your form code here.
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer aria-label="Footer">
+    <div class="footer-inner">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <img src="pictures/safesimxr logo.png" alt="SafeSimXR footer logo" style="height:32px; width:auto; object-fit:contain;">
+      </div>
+
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="font-size:12px;">Developed by</div>
+        <a href="#"><img src="pictures/SpandrelInteractive_CMYK.png" alt="Developer logo small" style="height:32px; width:auto; object-fit:contain;"></a>
+      </div>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
