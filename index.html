@@ -18,7 +18,8 @@
     <div class="header-inner">
       <div class="logo" aria-label="SafeSimXR logo">
         <!-- Replace with actual logo image if desired -->
-        <a href="#hero"> </a><img src="pictures/safesimxr logo.png" alt="SafeSimXR logo" style="height:28px; width:auto; object-fit:contain; display:block;"/>
+        <a href="#">
+        <img src="pictures\safesimxr logo.png" alt="SafeSimXR logo" style="height:28px; width:auto; object-fit:contain; display:block;"/></a>
       </div>
 
       <nav>
@@ -52,7 +53,7 @@
 </section>
 
   <!-- HERO CONTENT -->
-  <section id="hero" class="container hero-content" role="region" aria-label="Hero content">
+  <section class="container hero-content" role="region" aria-label="Hero content">
     <h1>Reliable Training for Real-World Challenges.</h1>
     <p>From construction sites to healthcare, we deliver reliable simulations that keep your team prepared and protected.</p>
 
@@ -61,19 +62,18 @@
     <div class="developed" style="margin-top:32px;">
       <div style="font-size:12px;">Developed by</div>
       <!-- INSERT 'Developed by' logo below (66x39). Replace src and link as needed -->
-      <a href="#" aria-label="Spandrel Interactive (developer) link">
+      <a href="https://spandrelinteractive.com" target="_blank" rel="noopener" aria-label="Spandrel Interactive website">
         <img src="pictures\SpandrelInteractive_CMYK.png" alt="Developer logo placeholder"></a>
     </div>
   </section>
 
   <!-- CLIENT LOGO STRIP -->
-  <div class="client-bar" aria-label="Trusted by">
-    <!-- The marquee duplicates its children to create a continuous scroll effect. -->
-    <div class="client-track" >
-    <img src="pictures/client bar logos.png" alt="client logos" />
-    <img src="pictures/client bar logos2.png" alt="client logos duplicate" />
+<div class="scroller" data-speed="medium">
+  <div class="scroller__inner">
+    <img src="pictures/client bar logos2.png" alt="" />
   </div>
 </div>
+
 
   </section>
 
@@ -151,27 +151,108 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact" aria-label="Contact">
-    <div class="form-embed">
-      <!-- INSERT YOUR EMBEDDED CONTACT FORM HERE (Formspree, Netlify forms, Hubspot, etc.) -->
-      <!-- Example: paste your form embed code or iframe here -->
-      Contact form embed placeholder — paste your form code here.
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer aria-label="Footer">
-    <div class="footer-inner">
-      <div style="display:flex; align-items:center; gap:12px;">
-        <img src="pictures/safesimxr logo.png" alt="SafeSimXR footer logo" style="height:32px; width:auto; object-fit:contain;">
-      </div>
-
-      <div style="display:flex; align-items:center; gap:12px;">
-        <div style="font-size:12px;">Developed by</div>
-        <a href="#"><img src="pictures/SpandrelInteractive_CMYK.png" alt="Developer logo small" style="height:32px; width:auto; object-fit:contain;"></a>
+<section class="contact-section">
+  <div class="contact-inner">
+    <!-- Left Column -->
+    <div class="contact-left">
+      <h2>Train Safer, Faster, Smarter</h2>
+      <p>We’d love to hear from you. Whether you have a question, feedback, or a project in mind.</p>
+      <div class="contact-image">
+        <img src="pictures/headset.png" alt="Contact illustration">
       </div>
     </div>
-  </footer>
+
+    <!-- Right Column -->
+    <div class="contact-box" id="contact">
+      <form class="contact-form" 
+            action="https://formspree.io/f/mqayezdv" 
+            method="POST">
+        
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="first-name">First Name *</label>
+        <input type="text" id="first-name" name="first-name" required>
+
+        <label for="last-name">Last Name *</label>
+        <input type="text" id="last-name" name="last-name" required>
+
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company">
+
+        <label for="message">How can we help? *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer aria-label="Footer">
+  <div class="footer-inner">
+    <!-- Left side: SafeSimXR logo -->
+    <div class="footer-logo">
+      <a href="#">
+        <img src="pictures/safesimxr logo.png" alt="SafeSimXR footer logo" />
+      </a>
+    </div>
+
+    <!-- Center: Footer Navigation -->
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#details">Details</a>
+      <a href="#faq">FAQs</a>
+      <a href="#contact">Contact</a>
+      <a href="#" id="privacyLink">Privacy Policy</a>
+    </nav>
+
+    <!-- Right side: Spandrel Interactive -->
+    <div class="footer-dev">
+      <div>Developed by</div>
+      <a href="https://spandrelinteractive.com" target="_blank" rel="noopener" aria-label="Spandrel Interactive website">
+        <img src="pictures/SpandrelInteractive_CMYK.png" alt="Developer logo small" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- PRIVACY POLICY MODAL -->
+<div id="privacyModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close" id="closeModal" aria-label="Close Privacy Policy">&times;</span>
+    <h2>Spandrel Interactive Privacy Policy</h2>
+    <p><strong>Last Updated: August 21, 2023</strong></p>
+    <p>Thank you for choosing Spandrel Interactive Inc. ("us", "we", or "our"). This page informs you of our policies regarding the collection, use, and disclosure of personal information we receive from users of any of our apps. By using an app, you agree to the collection and use of information in accordance with this policy.</p>
+    <p><strong>About Us</strong><br>
+    We are Spandrel Interactive Inc. (incorporated and registered in Canada) of 10 MacKay Dr. Fredericton, Canada E3B 0R6.</p>
+    <p><strong>Which services does this Privacy Policy apply to?</strong><br>
+    All of our websites, user accounts, customer and technical support, official forums, wikis, blogs, social media services and other products and services.</p>
+    <p><strong>Information Collection and Use</strong><br>
+    Personal Information: We may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Information"). This information may include, but is not limited to, your name, email address, phone number, and location. We will only collect personal information that you voluntarily provide to us.<br>
+  Usage Data: We may also collect information that your device sends whenever you use our app ("Usage Data"). This Usage Data may include information such as your device's Internet Protocol ("IP") address, device type, operating system version, the pages of our app that you visit, the time and date of your visit, the time spent on those pages, and other statistics.</p>
+    <p><strong>Use of Personal Information</strong><br>
+    We may use your Personal Information for various purposes, including but not limited to:
+    - Providing and maintaining the app
+    - Improving the app's features and functionality
+    - Sending you updates, notifications, and promotional materials
+    - Responding to your comments, questions, and requests</p>
+    <p><strong>Data Security</strong><br>
+    The security of your Personal Information is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.</p>
+    <p><strong>Third-Party Services</strong><br>
+    We may use third-party services to analyze and improve our app. These third-party service providers have their own privacy policies addressing how they use such information.</p>
+    <p><strong>Children's Privacy</strong><br>
+    Our app does not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you learn that your child has provided us with Personal Information, please contact us so that we can delete such information from our servers.</p>
+    <p><strong>Changes to This Privacy Policy</strong><br>
+    We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
+    <p><strong>Contact Us</strong><br>
+    If you have any questions about this Privacy Policy, please contact us at <a href="mailto:contact@spandrelinteractive.com?">contact@spandrelinteractive.com</a></p>
+  </div>
+</div>
+
 
 <script src="script.js"></script>
 
