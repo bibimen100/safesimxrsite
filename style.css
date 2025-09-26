@@ -188,11 +188,6 @@
   padding: 0 calc(var(--side-pad-desktop));
 }
 
-.client-inner {
-  padding: 0 calc(var(--side-pad-desktop));
-  overflow: hidden; /* keeps gradients working */
-}
-
 .client-bar::before,
 .client-bar::after {
   content: "";
@@ -351,6 +346,10 @@
       font-size:16px;
       padding:24px;
     }
+
+    @media (max-width: 750px) {
+  :root { --side-pad-desktop: 52px; }
+}
 
     /* footer */
     footer {
