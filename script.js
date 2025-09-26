@@ -44,13 +44,7 @@
 });
 
 
-  // Simple marquee fallback: if not wide enough to require scrolling, pause animation
-  // (no JS required to create duplicates because HTML duplicated logos earlier)
-  // If you want to adjust marquee speed: change animation-duration on .client-strip .marquee.
-
-  // Smooth scroll for anchors (already enabled by CSS scroll-behavior)
-  // Additional: ensure header height offset for anchor positions if header overlaps.
-  // If your sticky header overlaps anchor content, you can adjust via scroll-margin-top on section:
+ 
   document.querySelectorAll('section[id]').forEach(sec => {
     sec.style.scrollMarginTop = '80px'; // adjust if header height changes on mobile
   });
@@ -64,9 +58,75 @@
     }
   });
 
-  // Optional: pause marquee when reduced-motion is preferred
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.marquee').forEach(m => m.style.animation = 'none');
-  }
 
-  
+const scrollers = document.querySelectorAll(".scroller");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      // Add reveal with stagger (optional)
+      setTimeout(() => {
+        entry.target.classList.add("reveal");
+      }, index * 150); // 150ms delay between each card
+
+      observer.unobserve(entry.target); // Animate only once
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => {
+  observer.observe(card);
+});
+
+
+// Privacy Modal
+const privacyLink = document.getElementById("privacyLink");
+const privacyModal = document.getElementById("privacyModal");
+const closeModal = document.getElementById("closeModal");
+
+privacyLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  privacyModal.style.display = "block";
+  privacyModal.setAttribute("aria-hidden", "false");
+});
+
+closeModal.addEventListener("click", () => {
+  privacyModal.style.display = "none";
+  privacyModal.setAttribute("aria-hidden", "true");
+});
+
+// Close modal if clicking outside content
+window.addEventListener("click", (e) => {
+  if (e.target === privacyModal) {
+    privacyModal.style.display = "none";
+    privacyModal.setAttribute("aria-hidden", "true");
+  }
+});
+
