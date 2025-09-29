@@ -641,6 +641,19 @@ footer {
 }
 
 @media (max-width: 900px) {
+  /* when nav sections wrap onto a new row */
+  .footer-inner {
+    justify-content: center; /* center logo + dev */
+    text-align: center;
+  }
+
+  .footer-logo,
+  .footer-dev {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .footer-sections {
     flex-basis: 100%;
     justify-content: space-evenly;
