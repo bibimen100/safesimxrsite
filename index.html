@@ -43,7 +43,7 @@
   </header>
 
   <!-- HERO VIDEO -->
-  <section class="hero">
+  <section id="hero" class="hero">
   <div class="hero-video-container">
     <video autoplay muted loop playsinline>
       <source src="video/website-header.mp4" type="video/mp4">
@@ -195,20 +195,44 @@
 <!-- FOOTER -->
 <footer aria-label="Footer">
   <div class="footer-inner">
-    <!-- Left side: SafeSimXR logo -->
+    <!-- Left side: SafeSimXR logo + copyright -->
     <div class="footer-logo">
       <a href="#">
         <img src="pictures/safesimxr logo.png" alt="SafeSimXR footer logo" />
       </a>
+      <p class="footer-copy">© Copyright SafeSimXR, 2025</p>
     </div>
 
-    <!-- Center: Footer Navigation -->
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="#details">Details</a>
-      <a href="#faq">FAQs</a>
-      <a href="#contact">Contact</a>
-      <a href="#" id="privacyLink">Privacy Policy</a>
-    </nav>
+    <!-- Center: Footer Sections -->
+    <div class="footer-sections">
+      <!-- Company -->
+      <div class="footer-section">
+        <h3>Company</h3>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#hero">Welcome</a>
+          <a href="#details">Details</a>
+          <a href="#faq">FAQs</a>
+          <a href="#" id="privacyLink">Privacy Policy</a>
+        </nav>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-section">
+        <h3>Social Media</h3>
+        <div class="footer-socials">
+          <a href="#"><img src="pictures/Linkedin 1.png" alt="Social 1" /></a>
+          <a href="#"><img src="pictures/Facebook 2.png" alt="Social 2" /></a>
+          <a href="#"><img src="pictures/Youtube 2.png" alt="Social 3" /></a>
+          <a href="#"><img src="pictures/Clutch 2.png" alt="Social 4" /></a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <a href="#contact" class="footer-contact-btn">Contact Us</a>
+      </div>
+    </div>
 
     <!-- Right side: Spandrel Interactive -->
     <div class="footer-dev">
@@ -219,6 +243,8 @@
     </div>
   </div>
 </footer>
+
+
 
 <!-- PRIVACY POLICY MODAL -->
 <div id="privacyModal" class="modal" aria-hidden="true">
