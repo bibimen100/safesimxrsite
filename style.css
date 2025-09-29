@@ -34,6 +34,7 @@
 
     /* Sticky header - full width */
     header {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       position: sticky;
       top: 0;
       z-index: 1200;
@@ -373,71 +374,6 @@
       .cta{ width:160px; height:52px; line-height:52px; font-size:16px; }
     }
 
-    /* Footer Layout */
-footer {
-  background: #FFDDB7;
-  padding: 24px;
-}
-
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: var(--site-width, 1200px);
-  margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 24px;
-  text-align: center;
-}
-
-.footer-logo img {
-  height: 32px;
-  width: auto;
-  object-fit: contain;
-}
-
-.footer-nav {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer-nav a {
-  text-decoration: none;
-  color: #303030;
-  font-size: 14px;
-}
-
-.footer-nav a:hover {
-  text-decoration: underline;
-}
-
-.footer-dev {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-}
-
-.footer-dev img {
-  height: 32px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* Responsive Footer */
-@media (max-width: 768px) {
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-nav {
-    flex-direction: column;
-    gap: 12px;
-  }
-}
 
 /* CONTACT SECTION */
 .contact-section {
@@ -536,7 +472,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .contact-inner {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -585,6 +521,155 @@ footer {
   cursor: pointer;
 }
 
+/* Footer Layout */
+footer {
+  background: #FFDDB7;
+  padding: 24px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: var(--site-width, 1200px);
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 24px;
+  text-align: left;
+}
+
+.footer-logo img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Sections (Company, Social Media, Contact) */
+.footer-sections {
+  display: flex;
+  gap: 120px; /* wider gap between Company, Social Media, Contact */
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #303030;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #1d1d1d;
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-socials img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.footer-socials a img {
+  transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+.footer-socials a:hover img {
+  filter: brightness(0) saturate(100%) invert(53%) sepia(95%) saturate(3220%) hue-rotate(7deg) brightness(101%) contrast(105%);
+  transform: scale(1.1);
+}
+
+/* footer contact button */
+.footer-contact-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background-color: var(--accent);
+  color: #1d1d1d;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.footer-contact-btn:hover {
+  background-color: #FFB461;
+}
+
+.footer-dev {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.footer-dev img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Responsive adjustments for wrapping */
+@media (max-width: 1100px) {
+  .footer-sections {
+    gap: 60px; /* smaller gap as space gets tighter */
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-sections {
+    flex-basis: 100%;
+    justify-content: space-evenly;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-sections {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .footer-nav {
+    align-items: center;
+  }
+
+  .footer-dev {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 .faq, .cards, .scroller {
   margin-bottom: 120px;
