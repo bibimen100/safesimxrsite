@@ -538,17 +538,28 @@ footer {
   text-align: left;
 }
 
-.footer-logo img {
-  height: 32px;
+.footer-logo-block {
+  display: flex;
+  flex-direction: column; /* stack logo + copyright vertically */
+  align-items: flex-start; /* left align by default */
+}
+
+.footer-logo-block img {
+  height: 32px;   /* original size */
   width: auto;
   object-fit: contain;
 }
 
-.footer-copy {
+.footer-logo-block .footer-logo {
+  margin-bottom: 4px; /* small space between logo and copy */
+}
+
+.footer-logo-block .footer-copy {
   font-size: 11px;
   color: #666;
-  margin-top: 4px;
+  margin-top: 0; /* reset since we're controlling spacing with margin-bottom above */
 }
+
 
 /* Sections (Company, Social Media, Contact) */
 .footer-sections {
@@ -642,12 +653,14 @@ footer {
 
 @media (max-width: 900px) {
   /* when nav sections wrap onto a new row */
-  .footer-inner {
-    justify-content: center; /* center logo + dev */
+  .footer-logo-block {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center logo + copy on small screens */
     text-align: center;
   }
-
-  .footer-logo,
+  
   .footer-dev {
     flex-basis: 100%;
     display: flex;
